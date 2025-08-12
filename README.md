@@ -38,3 +38,8 @@ Inserting into IDE (Eclipse)
 
 ### ⚠️ Attention
 The credentials for the Google API in **GoogleSheetsController** must be entered manually for security reasons.
+
+
+![image1](assets/image1.png)
+![image2](assets/image2.png)
+![image3](assets/image3.png)
