@@ -25,7 +25,6 @@ The system enables automated data capture, processing, and storage from multiple
 2. **Initialization of structure**:
    ```sql
    SOURCE <path_to_resources>/genai.sql;
-```
 
 
 ### System Execution
