@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τιμολόγιο TF-2024-005</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .company { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .invoice-details { margin: 20px 0; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .invoice-table th, .invoice-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .invoice-table th { background-color: #f2f2f2; }
+        .total-row { font-weight: bold; background-color: #e8f4f8; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company">TechFlow Solutions</div>
+        <div>Λεωφ. Κηφισίας 123, 15125 Μαρούσι</div>
+        <div>ΑΦΜ: 123456789 | ΔΟΥ: Αμαρουσίου</div>
+        <div>Τηλ: 210-1234567 | Email: info@techflow-solutions.gr</div>
+    </div>
+
+    <div class="invoice-details">
+        <h2>ΤΙΜΟΛΟΓΙΟ ΠΩΛΗΣΗΣ</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <strong>Αριθμός:</strong> TF-2024-005<br>
+                <strong>Ημερομηνία:</strong> 25/01/2024<br>
+                <strong>Τρόπος Πληρωμής:</strong> Κάρτα
+            </div>
+            <div>
+                <strong>Πελάτης:</strong><br>
+                Βιβλιοπωλείο Καλλιτεχνία<br>
+                Ιπποκράτους 33<br>
+                10679 Αθήνα<br>
+                ΑΦΜ: 789123456
+            </div>
+        </div>
+    </div>
+
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>Περιγραφή</th>
+                <th>Ποσότητα</th>
+                <th>Τιμή Μονάδας</th>
+                <th>Σύνολο</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tablet για Inventory Management</td>
+                <td>2</td>
+                <td>€350.00</td>
+                <td>€700.00</td>
+            </tr>
+            <tr>
+                <td>Barcode Scanner</td>
+                <td>2</td>
+                <td>€180.00</td>
+                <td>€360.00</td>
+            </tr>
+            <tr>
+                <td>POS Terminal</td>
+                <td>1</td>
+                <td>€450.00</td>
+                <td>€450.00</td>
+            </tr>
+            <tr>
+                <td>Receipt Printer</td>
+                <td>1</td>
+                <td>€220.00</td>
+                <td>€220.00</td>
+            </tr>
+            <tr>
+                <td>Setup & Configuration</td>
+                <td>1</td>
+                <td>€300.00</td>
+                <td>€300.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <table style="width: 300px; margin-left: auto;">
+            <tr>
+                <td><strong>Καθαρή Αξία:</strong></td>
+                <td style="text-align: right;"><strong>€2,030.00</strong></td>
+            </tr>
+            <tr>
+                <td><strong>ΦΠΑ 24%:</strong></td>
+                <td style="text-align: right;"><strong>€487.20</strong></td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>ΣΥΝΟΛΟ:</strong></td>
+                <td style="text-align: right;"><strong>€2,517.20</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; font-size: 12px;">
+        <p><strong>Σημειώσεις:</strong> Δωρεάν εκπαίδευση προσωπικού</p>
+        <p><strong>Εγγύηση:</strong> 1 χρόνος για όλα τα προϊόντα</p>
+    </div>
+</body>
+</html> 

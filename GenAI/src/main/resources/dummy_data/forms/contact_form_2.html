@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμα Επικοινωνίας - TechFlow Solutions</title>
+</head>
+<body>
+    <h2>Αίτημα για Υπηρεσίες IT</h2>
+    <form action="/submit" method="POST">
+        <div>
+            <label>Όνομα και Επώνυμο:</label>
+            <input type="text" name="full_name" value="Μαρία Κώστα" readonly>
+        </div>
+        
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" value="maria.kosta@lawfirm.gr" readonly>
+        </div>
+        
+        <div>
+            <label>Τηλέφωνο:</label>
+            <input type="tel" name="phone" value="210-9876543" readonly>
+        </div>
+        
+        <div>
+            <label>Εταιρεία:</label>
+            <input type="text" name="company" value="Κώστα & Συνεργάτες Δικηγορικό Γραφείο" readonly>
+        </div>
+        
+        <div>
+            <label>Υπηρεσία Ενδιαφέροντος:</label>
+            <select name="service" disabled>
+                <option value="database_management" selected>Διαχείριση Βάσης Δεδομένων</option>
+            </select>
+        </div>
+        
+        <div>
+            <label>Μήνυμα:</label>
+            <textarea name="message" readonly>Θέλουμε να δημιουργήσουμε ένα σύστημα διαχείρισης υποθέσεων και πελατών. Χρειαζόμαστε ασφάλεια υψηλού επιπέδου λόγω ευαίσθητων δεδομένων.</textarea>
+        </div>
+        
+        <div>
+            <label>Ημερομηνία Υποβολής:</label>
+            <input type="datetime-local" name="submission_date" value="2024-01-16T09:15" readonly>
+        </div>
+        
+        <div>
+            <label>Προτεραιότητα:</label>
+            <select name="priority" disabled>
+                <option value="medium" selected>Μέτρια</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html> 

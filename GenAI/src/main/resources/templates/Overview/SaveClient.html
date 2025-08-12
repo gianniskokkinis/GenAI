@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	    
+	    
+	    
+
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+		<title>Client</title>
+    <style>
+      body{
+        margin: 5%;
+      }
+    </style>
+	</head>
+<body>
+    <h1> Save Client </h1>
+
+    <div th:if="${mode == 'save'}">
+        <form  th:action="@{/client/save}" th:object="${data}" method="post">
+
+            <!-- Type -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Type:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.type}" th:field="*{type}" aria-describedby="emailHelp">
+            </div>
+
+            <!-- Source -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Source:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.source}" th:field="*{source}" aria-describedby="emailHelp">
+            </div>
+
+            <!-- Date -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Date:</label>
+                <input type="text" class="form-control" id="date" maxlength="10"  th:value="${data.date}" th:field="*{date}" aria-describedby="emailHelp">
+            </div>
+
+            <!-- client's name -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Client's name:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.clientName}" th:field="*{clientName}" τη aria-describedby="emailHelp">
+            </div>
+
+            <br>
+            
+            <!-- Email-->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="date" th:value="${data.email}" th:field="*{email}" aria-describedby="emailHelp">
+            </div>
+                    
+            <!-- Phone -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone:</label>
+                <input type="tel" maxlength="10" class="form-control" id="date" th:value="${data.phone}" th:field="*{phone}" aria-describedby="emailHelp">
+            </div>
+            
+            
+            <!-- Company -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.company}" th:field="*{company}" aria-describedby="emailHelp">
+            </div>
+
+            
+            <!-- Company -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Service Interest:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.serviceInterest}" th:field="*{serviceInterest}" aria-describedby="emailHelp">
+            </div>
+
+
+            <!-- Priority -->
+            <div class="mb-3">
+                <label for="prioritySelect" class="form-label">Priority:</label>
+                <select id="prioritySelect" class="form-select" name="priority" th:field="*{priority}">
+                    <option value="Low" th:attr="selected=${data.priority == 'LOW' ? 'selected' : null}">Low</option>
+                    <option value="Medium" th:attr="selected=${data.priority == 'MEDIUM' ? 'selected' : null}">Medium</option>
+                    <option value="High" th:attr="selected=${data.priority == 'HIGH' ? 'selected' : null}">High</option>
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">message:</label>
+                <textarea style="width: auto;height: auto;" th:value="${data.Message}" th:field="*{Message}"> </textarea>
+                <br>
+            </div>
+
+            <!-- Body mail -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email Body:</label>
+                <p th:text="${data.bodyMail}"></p>
+                <br>
+            </div>
+
+            
+                <button type="submit" class="btn btn-success"><svg width="24px" height="24px" viewBox="0 0 32 32" id="svg5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs id="defs2"></defs> <g id="layer1" transform="translate(-348,-436)"> <path d="m 355,458.01367 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 4 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z" id="path453689" style="color:#ffffff;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"></path> <path d="m 371,455.01367 a 1,1 0 0 0 -1,1 v 3.58594 l -0.29297,-0.29297 A 1,1 0 0 0 369,459.01367 a 1,1 0 0 0 -0.70703,0.29297 1,1 0 0 0 0,1.41406 l 2,2 a 1.0001,1.0001 0 0 0 0.0469,0.0371 1,1 0 0 0 0.0859,0.0684 1.0001,1.0001 0 0 0 0.0898,0.0566 1,1 0 0 0 0.10547,0.0508 1.0001,1.0001 0 0 0 0.10352,0.0352 1,1 0 0 0 0.10547,0.0254 1.0001,1.0001 0 0 0 0.11914,0.0137 1,1 0 0 0 0.0508,0.006 1,1 0 0 0 0.0508,-0.006 1.0001,1.0001 0 0 0 0.11914,-0.0137 1,1 0 0 0 0.10547,-0.0254 1.0001,1.0001 0 0 0 0.10352,-0.0352 1,1 0 0 0 0.10547,-0.0508 1.0001,1.0001 0 0 0 0.0898,-0.0566 1,1 0 0 0 0.0859,-0.0684 1.0001,1.0001 0 0 0 0.0469,-0.0371 l 2,-2 a 1,1 0 0 0 0,-1.41406 1,1 0 0 0 -1.41406,0 L 372,459.59961 v -3.58594 a 1,1 0 0 0 -1,-1 z" id="path453665" style="color:#ffffff;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"></path> <path d="m 355,450.01367 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 4 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z" id="path453651" style="color:#ffffff;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"></path> <path d="m 355,442.01367 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 4 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z" id="path453627" style="color:#ffffff;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"></path> <path d="m 353,438.01367 c -1.6447,0 -3,1.3553 -3,3 v 4 c 0,0.76628 0.29675,1.46716 0.77734,2 -0.48059,0.53284 -0.77734,1.23372 -0.77734,2 v 4 c 0,0.76628 0.29675,1.46716 0.77734,2 -0.48059,0.53284 -0.77734,1.23372 -0.77734,2 v 4 c 0,1.6447 1.3553,3 3,3 h 13.11133 c 1.26351,1.23579 2.98973,2 4.88867,2 3.85414,0 7,-3.14585 7,-7 0,-2.78161 -1.63913,-5.19487 -4,-6.32226 v -3.67774 c 0,-0.76628 -0.29675,-1.46716 -0.77734,-2 0.48059,-0.53284 0.77734,-1.23372 0.77734,-2 v -4 c 0,-1.6447 -1.3553,-3 -3,-3 z m 0,2 h 18 c 0.5713,0 1,0.42871 1,1 v 4 c 0,0.5713 -0.4287,1 -1,1 h -18 c -0.5713,0 -1,-0.4287 -1,-1 v -4 c 0,-0.57129 0.4287,-1 1,-1 z m 0,8 h 18 c 0.5713,0 1,0.42871 1,1 v 3.07227 c -0.32711,-0.0472 -0.66021,-0.0723 -1,-0.0723 -1.89894,0 -3.62516,0.76421 -4.88867,2 H 353 c -0.5713,0 -1,-0.4287 -1,-1 v -4 c 0,-0.57129 0.4287,-1 1,-1 z m 18,6 c 2.77327,0 5,2.22674 5,5 0,2.77327 -2.22673,5 -5,5 -1.44074,0 -2.73243,-0.602 -3.64258,-1.56836 a 1,1 0 0 0 -0.16797,-0.18554 C 366.44728,461.38795 366,460.25556 366,459.01367 c 0,-1.25636 0.45901,-2.39958 1.2168,-3.27539 a 1,1 0 0 0 0.0645,-0.0762 c 0.91337,-1.01394 2.23794,-1.64844 3.71875,-1.64844 z m -18,2 h 11.67773 c -0.43469,0.9103 -0.67773,1.92747 -0.67773,3 0,1.07253 0.24304,2.0897 0.67773,3 H 353 c -0.5713,0 -1,-0.4287 -1,-1 v -4 c 0,-0.57129 0.4287,-1 1,-1 z" id="path453609" style="color:#ffffff;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none"></path> </g> </g></svg> Save</button>
+            
+        
+    </div>
+
+    <div th:if="${mode == 'export'}">
+        <form  th:action="@{/data/extract}" th:object="${data}" method="post">
+            
+
+            <!-- Type -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Type:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.type}" th:field="*{type}" aria-describedby="emailHelp">
+            </div>
+
+            <!-- Source -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Source:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.source}" th:field="*{source}" aria-describedby="emailHelp">
+            </div>
+
+            <!-- Date -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Date:</label>
+                <input type="text" class="form-control" id="date" maxlength="10"  th:value="${data.date}" th:field="*{date}" aria-describedby="emailHelp">
+            </div>
+
+
+            <!-- client's name -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Client's name:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.clientName}" th:field="*{clientName}" τη aria-describedby="emailHelp">
+            </div>
+
+            <br>
+            
+            <!-- Email-->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="date" th:value="${data.email}" th:field="*{email}" aria-describedby="emailHelp">
+            </div>
+                    
+            <!-- Phone -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone:</label>
+                <input type="tel" maxlength="10" class="form-control" id="date" th:value="${data.phone}" th:field="*{phone}" aria-describedby="emailHelp">
+            </div>
+            
+            
+            <!-- Company -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.company}" th:field="*{company}" aria-describedby="emailHelp">
+            </div>
+
+            
+            <!-- Company -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Service Interest:</label>
+                <input type="text" class="form-control" id="date" th:value="${data.serviceInterest}" th:field="*{serviceInterest}" aria-describedby="emailHelp">
+            </div>
+
+
+            <!-- Priority -->
+            <div class="mb-3">
+                <label for="prioritySelect" class="form-label">Priority:</label>
+                <select id="prioritySelect" class="form-select" name="priority" th:field="*{priority}">
+                    <option value="Low" th:attr="selected=${data.priority == 'LOW' ? 'selected' : null}">Low</option>
+                    <option value="Medium" th:attr="selected=${data.priority == 'MEDIUM' ? 'selected' : null}">Medium</option>
+                    <option value="High" th:attr="selected=${data.priority == 'HIGH' ? 'selected' : null}">High</option>
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">message:</label>
+                <textarea style="width: auto;height: auto;" th:value="${data.Message}" th:field="*{Message}"> </textarea>
+                <br>
+            </div>
+
+            <!-- Body mail -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email Body:</label>
+                <p th:text="${data.bodyMail}"></p>
+                <br>
+            </div>
+
+            
+                <button type="submit" class="btn btn-success"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.5,9 C19.2238576,9 19,8.77614237 19,8.5 L19,7 L15.5,7 C15.2238576,7 15,6.77614237 15,6.5 L15,3 L6.5,3 C5.67157288,3 5,3.67157288 5,4.5 L5,19.5 C5,20.3284271 5.67157288,21 6.5,21 L17.5,21 C18.3284271,21 19,20.3284271 19,19.5 L19,17.5 C19,17.2238576 19.2238576,17 19.5,17 C19.7761424,17 20,17.2238576 20,17.5 L20,19.5 C20,20.8807119 18.8807119,22 17.5,22 L6.5,22 C5.11928813,22 4,20.8807119 4,19.5 L4,4.5 C4,3.11928813 5.11928813,2 6.5,2 L15.4720225,2 C15.6047688,1.99158053 15.7429463,2.03583949 15.8535534,2.14644661 L19.8535534,6.14644661 C19.9641605,6.25705373 20.0084195,6.39523125 20,6.52797748 L20,8.5 C20,8.77614237 19.7761424,9 19.5,9 Z M18.2928932,13 L10.4861218,13 C10.2099794,13 9.98612181,12.7761424 9.98612181,12.5 C9.98612181,12.2238576 10.2099794,12 10.4861218,12 L18.2928932,12 L16.1464466,9.85355339 C15.9511845,9.65829124 15.9511845,9.34170876 16.1464466,9.14644661 C16.3417088,8.95118446 16.6582912,8.95118446 16.8535534,9.14644661 L19.8535534,12.1464466 C20.0488155,12.3417088 20.0488155,12.6582912 19.8535534,12.8535534 L16.8535534,15.8535534 C16.6582912,16.0488155 16.3417088,16.0488155 16.1464466,15.8535534 C15.9511845,15.6582912 15.9511845,15.3417088 16.1464466,15.1464466 L18.2928932,13 Z M16,3.70710678 L16,6 L18.2928932,6 L16,3.70710678 Z"></path> </g></svg> Export</button>
+            
+    </div>
+
+
+        
+        
+        
+
+</form>
+
+</body>
+</html>

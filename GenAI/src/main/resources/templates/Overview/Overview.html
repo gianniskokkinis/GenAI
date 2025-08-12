@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	    
+	    
+	    
+
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+		<title>Overview</title>
+    <style>
+      body{
+        margin: 5%;
+      }
+    </style>
+	</head>
+<body>
+	<h1>GenAI</h1><br>
+
+
+	
+  <!--form to upload -->
+  
+  <div th:if="${message}">
+    
+    <!-- Simple message-->
+    <div th:if="${status == 'primary'}">
+      <div class="alert alert-secondary" role="alert">
+        <h2 th:text="${message}"/>
+      </div> 
+    </div>
+
+    <!-- sucess message-->
+    <div th:if="${status == 'success'}">
+      <div class="alert alert-success" role="alert">
+        <h2 th:text="${message}"/>
+      </div> 
+    </div>
+
+    <!-- fail message-->
+    <div th:if="${status == 'fail'}">
+      <div class="alert alert-danger" role="alert">
+        <h2 th:text="${message}"/>
+      </div> 
+    </div>
+	</div>
+
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+          <form method="POST" enctype="multipart/form-data" action="/upload">
+            <table>
+              <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+              <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+            </table>
+          </form>
+        </div>
+      </div>
+      <div class="col">
+        
+      </div>
+      <div class="col">
+        <div class="container text-center">
+          <div class="row">
+            <!-- Database Buttons -->
+            <div class="col">
+              <a th:href="@{/clients}" type="button" class="btn btn-secondary"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="6" r="4" stroke="#ffffff" stroke-width="1.5"></circle> <path d="M19.9975 18C20 17.8358 20 17.669 20 17.5C20 15.0147 16.4183 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C14.231 22 15.8398 21.8433 17 21.5634" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg> clients </a>
+            </div>
+            <div class="col">
+               <a th:href="@{/invoices}" type="button" class="btn btn-secondary"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.17157 3.17157C3 4.34315 3 6.22876 3 10V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V10C21 6.22876 21 4.34315 19.8284 3.17157C18.6569 2 16.7712 2 13 2H11C7.22876 2 5.34315 2 4.17157 3.17157ZM8 9.25C7.58579 9.25 7.25 9.58579 7.25 10C7.25 10.4142 7.58579 10.75 8 10.75H16C16.4142 10.75 16.75 10.4142 16.75 10C16.75 9.58579 16.4142 9.25 16 9.25H8ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13C13.4142 14.75 13.75 14.4142 13.75 14C13.75 13.5858 13.4142 13.25 13 13.25H8Z" fill="#1C274C"></path> </g></svg> Invoices</a>
+            </div>
+            <div class="col">
+              <a  th:href="@{/data/extracted}" type="button" class="btn btn-success"><svg fill="#000000" height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M463.996,126.864L340.192,3.061C338.232,1.101,335.574,0,332.803,0H95.726C67.725,0,44.944,22.782,44.944,50.784v410.434 c0,28.001,22.781,50.783,50.783,50.783h320.547c28.001,0,50.783-22.781,50.783-50.783V134.253 C467.056,131.482,465.955,128.824,463.996,126.864z M343.254,35.678h0.001l88.126,88.126h-58.242 c-7.984,0-15.49-3.109-21.134-8.753c-5.643-5.643-8.752-13.148-8.751-21.131V35.678z M446.159,461.217 c-0.001,16.479-13.407,29.885-29.885,29.885H95.726c-16.479,0-29.885-13.406-29.885-29.885V50.784 c0.001-16.479,13.407-29.886,29.885-29.886h226.631v73.021c-0.002,13.565,5.28,26.318,14.872,35.909 c9.591,9.592,22.345,14.874,35.911,14.874h73.019V461.217z"></path> </g> </g> <g> <g> <path d="M376.882,209.049H135.119c-5.771,0-10.449,4.678-10.449,10.449V361.94c0,5.771,4.678,10.449,10.449,10.449h241.763 c5.771,0,10.449-4.678,10.449-10.449V219.498C387.331,213.728,382.652,209.049,376.882,209.049z M245.551,351.492h-99.984V324.92 h0.001h99.983V351.492z M245.551,304.022h-99.984v-26.606h0.001h99.983V304.022z M245.551,256.518h-99.984v-26.572h99.984V256.518 z M366.433,351.492h-99.984V324.92h99.984V351.492z M366.433,304.022h-99.984v-26.606h99.984V304.022z M366.433,256.518h-99.984 v-26.572h99.984V256.518z"></path> </g> </g> <g> <g> <path d="M139.796,392.86h-4.678c-5.771,0-10.449,4.678-10.449,10.449c0,5.771,4.678,10.449,10.449,10.449h4.678 c5.771,0,10.449-4.678,10.449-10.449C150.245,397.539,145.567,392.86,139.796,392.86z"></path> </g> </g> <g> <g> <path d="M275.091,392.86H173.599c-5.771,0-10.449,4.678-10.449,10.449c0,5.771,4.678,10.449,10.449,10.449h101.492 c5.771,0,10.449-4.678,10.449-10.449C285.54,397.539,280.862,392.86,275.091,392.86z"></path> </g> </g> </g></svg> Data To Export</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <br>
+  <br>
+  <br>
+  <div class="container text-center text-bg-dark">
+    <br>
+    <div class="row">
+      <div class="col">
+        <h2> Search </h1>
+        <form class="d-flex" role="search" method="GET" action="/search">
+          <input class="form-control me-2" name="keyword"  type="search" placeholder="Search" aria-label="Search"/>
+          <button type="submit" class="btn btn-primary"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        </form>
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+  <br>
+  <br>
+  <div class="container text-center">
+    <div class="row">
+      <!-- Sort buttons -->
+            <div class="col">
+              <a type="button" th:href="@{/sort(type='name')}" class="btn btn-info">Sort by Name</a>
+            </div>
+            <div class="col">
+              <a type="button" th:href="@{/sort(type='date')}" class="btn btn-info">Sort by Date</a>
+            </div>
+            <div class="col">
+              <a type="button" th:href="@{/sort(type='EMAIL')}" class="btn btn-info">Sort by Email</a>
+            </div>
+            <div class="col">
+              <a type="button" th:href="@{/sort(type='INVOICE')}" class="btn btn-info">Sort by Invoice</a>
+            </div>
+            <div class="col">
+              <a type="button" th:href="@{/sort(type='FORM')}" class="btn btn-info">Sort by Form</a>
+            </div>
+    </div>
+  </div>
+
+
+
+
+
+	
+
+
+
+  <!-- Dashboard -->
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Source</th>
+      <th scope="col">Date</th>
+      <th scope="col">Client_Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Company</th>
+      <th scope="col">Service_Interest</th>
+      <th scope="col">Amount (€)</th>
+      <th scope="col">VAT (€)</th>
+      <th scope="col">Total_Amount (€)</th>
+      <th scope="col">Invoice_Number</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Message</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="data, iterStat: ${collectedData}">
+      <th scope="row" th:text="${data.type}"></th>
+      <td th:text="${data.source}"></td>
+      <td th:text="${data.date}"></td>
+      <td th:text="${data.clientName}"></td>
+      <td th:text="${data.email}"></td>
+      <td th:text="${data.phone}"></td>
+      <td th:text="${data.company}"></td>
+      <td th:text="${data.serviceInterest}"></td>
+      <td th:text="${data.ammount}"></td>
+      <td th:text="${data.VAT}"></td>
+      <td th:text="${data.totalAmmount}"></td>
+      <td th:text="${data.invoiceNumber}"></td>
+      <td th:text="${data.priority}"></td>
+      <td th:text="${data.Message}"></td>
+      <td>
+        <a type="button" th:href="@{/edit(index=${iterStat.index},mode='save')}" class="btn btn-primary"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M790.706 338.824v112.94H395.412c-31.06 0-56.47 25.3-56.47 56.471v744.509c17.73-6.325 36.592-10.391 56.47-10.391h1129.412c19.877 0 38.738 4.066 56.47 10.39V508.236c0-31.171-25.412-56.47-56.47-56.47h-395.295V338.824h395.295c93.402 0 169.411 76.009 169.411 169.411v1242.353c0 93.403-76.01 169.412-169.411 169.412H395.412C302.009 1920 226 1843.99 226 1750.588V508.235c0-93.402 76.01-169.411 169.412-169.411h395.294Zm734.118 1016.47H395.412c-31.06 0-56.47 25.299-56.47 56.47v338.824c0 31.172 25.41 56.47 56.47 56.47h1129.412c31.058 0 56.47-25.298 56.47-56.47v-338.823c0-31.172-25.412-56.47-56.47-56.47ZM1016.622-.023v880.151l246.212-246.325 79.85 79.85-382.532 382.644-382.645-382.644 79.85-79.85L903.68 880.128V-.022h112.941ZM564.824 1468.235c-62.344 0-112.942 50.71-112.942 112.941s50.598 112.942 112.942 112.942c62.343 0 112.94-50.71 112.94-112.942 0-62.23-50.597-112.94-112.94-112.94Z" fill-rule="evenodd"></path> </g></svg></a> 
+        <a type="button" th:href="@{/edit(index=${iterStat.index},mode='export')}" class="btn btn-success"><svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M94.284,65.553L75.825,52.411c-0.389-0.276-0.887-0.312-1.312-0.093c-0.424,0.218-0.684,0.694-0.685,1.173l0.009,6.221 H57.231c-0.706,0-1.391,0.497-1.391,1.204v11.442c0,0.707,0.685,1.194,1.391,1.194h16.774v6.27c0,0.478,0.184,0.917,0.609,1.136 c0.425,0.219,0.853,0.182,1.242-0.096l18.432-13.228c0.335-0.239,0.477-0.626,0.477-1.038c0-0.002,0-0.002,0-0.002 C94.765,66.179,94.621,65.793,94.284,65.553z"></path> <path d="M64.06,78.553h-6.49h0c-0.956,0-1.73,0.774-1.73,1.73h-0.007v3.01H15.191V36.16h17.723c0.956,0,1.73-0.774,1.73-1.73 V16.707h21.188l0,36.356h0.011c0.021,0.937,0.784,1.691,1.726,1.691h6.49c0.943,0,1.705-0.754,1.726-1.691h0.004v-0.038 c0,0,0-0.001,0-0.001l0-0.001l0-40.522h-0.005V8.48c0-0.956-0.774-1.73-1.73-1.73h-2.45v0H32.914v0h-1.73L5.235,32.7v2.447v1.013 v52.912v2.447c0,0.956,0.774,1.73,1.73,1.73h1.582h53.925h1.582c0.956,0,1.73-0.774,1.73-1.73v-2.448h0.005l0-8.789l0-0.001 C65.79,79.328,65.015,78.553,64.06,78.553z"></path> </g> </g></svg></a>
+        <a type="button" th:href="@{/decline(index=${iterStat.index})}" class="btn btn-danger"><svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>decline</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM6.1,21.9a18,18,0,0,1,29.1-12L9.9,35.2A18.1,18.1,0,0,1,6.1,21.9ZM26,41.9A18.2,18.2,0,0,1,12.7,38L38,12.8a17.6,17.6,0,0,1,3.9,13.3A18.1,18.1,0,0,1,26,41.9Z"></path> </g> </g> </g></svg></a>
+      </td>
+      <div th:if="${data.warning == true}">
+        <td><svg fill="#f5c211" width="34px" height="34px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" d="M253.617407,12.4967773 L434.398258,193.277628 C451.060628,209.939998 451.060628,236.955037 434.398258,253.617407 L253.617407,434.398258 C236.955037,451.060628 209.939998,451.060628 193.277628,434.398258 L12.4967773,253.617407 C-4.16559245,236.955037 -4.16559245,209.939998 12.4967773,193.277628 L193.277628,12.4967773 C209.939998,-4.16559245 236.955037,-4.16559245 253.617407,12.4967773 Z M223.447518,282.114184 C208.209422,282.114184 196.780851,293.378184 196.780851,308.396851 C196.780851,324.098184 207.863102,335.362184 223.447518,335.362184 C238.685613,335.362184 250.114184,324.098184 250.114184,308.738184 C250.114184,293.378184 238.685613,282.114184 223.447518,282.114184 Z M244.780851,116.780851 L202.114184,116.780851 L202.114184,244.780851 L244.780851,244.780851 L244.780851,116.780851 Z" transform="translate(32.552 32.552)"></path></g></svg></td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

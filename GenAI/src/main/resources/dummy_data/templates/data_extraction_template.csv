@@ -1,0 +1,11 @@
+Type,Source,Date,Client_Name,Email,Phone,Company,Service_Interest,Amount,VAT,Total_Amount,Invoice_Number,Priority,Message
+FORM,contact_form_1.html,2024-01-15,Νίκος Παπαδόπουλος,nikos.papadopoulos@example.gr,210-1234567,Digital Marketing Pro,Ανάπτυξη Website,,,,,high,Χρειαζόμαστε ένα νέο e-commerce website
+FORM,contact_form_2.html,2024-01-16,Μαρία Κώστα,maria.kosta@lawfirm.gr,210-9876543,Κώστα & Συνεργάτες Δικηγορικό Γραφείο,Διαχείριση Βάσης Δεδομένων,,,,,medium,Θέλουμε να δημιουργήσουμε ένα σύστημα διαχείρισης υποθέσεων
+EMAIL,email_01.eml,2024-01-20,Σπύρος Μιχαήλ,spyros.michail@techcorp.gr,210-3344556,TechCorp AE,CRM System,,,,,high,Χρειαζόμαστε διαχείριση πελατών
+EMAIL,email_02.eml,2024-01-20,Ελένη Παπαγεωργίου,eleni@fashionstore.gr,6944-123456,Fashion Store Athens,E-commerce Platform,,,,,medium,Θέλουμε να επεκταθούμε online
+INVOICE,invoice_TF-2024-001.html,2024-01-21,Office Solutions Ltd,,,,,850.00,204.00,1054.00,TF-2024-001,,
+INVOICE,invoice_TF-2024-002.html,2024-01-22,Microsoft Hellas,,,,,2400.00,576.00,2976.00,TF-2024-002,,
+INVOICE,invoice_TF-2024-003.html,2024-01-23,Computer World SA,,,,,4200.00,1008.00,5208.00,TF-2024-003,,
+INVOICE,invoice_TF-2024-004.html,2024-01-24,Digital Marketing Agency,,,,,1600.00,384.00,1984.00,TF-2024-004,,
+INVOICE,invoice_TF-2024-005.html,2024-01-25,Βιβλιοπωλείο Καλλιτεχνία,,,,,2030.00,487.20,2517.20,TF-2024-005,,
+INVOICE,invoice_TF-2024-006.html,2024-01-26,Ιατρείο Παπαδόπουλος,,,,,6220.00,1492.80,7712.80,TF-2024-006,, 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	    
+	    
+	    
+
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+		<title>Client</title>
+    <style>
+      body{
+        margin: 5%;
+      }
+    </style>
+	</head>
+<body>
+    <h1 th:text="${client.name}"></h1>
+
+    <form>
+        <!-- client's name -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"> <b> Client's name: </b></label>
+            <p th:text="${client.name}"></p>
+        </div>
+
+        <br>
+        
+        <!-- Email-->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b> Email: </b></label>
+            <p th:text="${client.email}"></p>
+        </div>
+                
+        <!-- Phone -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b> Phone: </b></label>
+            <p th:text="${client.phone}"></p>
+        </div>
+        
+        
+        <!-- Company -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b> Company: </b></label>
+            <p th:text="${client.company}"></p>
+        </div>
+
+        
+        <!-- Company -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b> Service Interest: </b></label>
+            <p th:text="${client.interestServices}"></p>
+        </div>
+
+        
+        
+
+
+        <!-- Invoices -->
+        <p> <b>  Invoices: </b></p>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Invoice Number</th>
+                <th scope="col">Amount</th>
+                <th scope="col">VAT</th>
+                <th scope="col">Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="inv: ${displayInvoices}">
+                <td th:text="${inv.date}"></td>
+                <td th:text="${inv.invoiceNumber}"></td>
+                <td th:text="${inv.amount}"></td>
+                <td th:text="${inv.fpa}"></td>
+                <td th:text="${inv.totalAmount}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        
+        <!-- Request list -->
+        <p><b>  Requests: </b></p>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Important Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="req: ${displayRequests}">
+                <td th:text="${req.date}"></td>
+                <td th:text="${req.priority}"></td>
+                <td th:text="${req.importantInfo}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+       
+
+        
+
+</form>
+
+</body>
+</html>

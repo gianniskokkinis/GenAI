@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	    
+	    
+	    
+
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+		<title>Extracted Data</title>
+    <style>
+      body{
+        margin: 5%;
+      }
+    </style>
+	</head>
+<body>
+
+    <div class="container text-center">
+        <div class="row">
+            
+        </div>
+        <div class="row">
+            
+            
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            <h1>Data to export</h1><br>
+            </div>
+            <div class="col">
+
+                <form th:action="@{/export}" method="post" id="exportForm">
+                    
+                    <!-- Select type -->
+                    <div class="mb-3">
+                        <label for="fileType" class="form-label">File type:</label>
+                        <select name="type" id="fileType" class="form-select" required>
+                            <option value="csv">CSV</option>
+                            <option value="xls">Excel (XLSX)</option>
+                        </select>
+                    </div>
+                        
+                    <button type="submit" class="btn btn-success"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"></path></g></svg> Export </button>
+
+                </form>
+
+                
+            </div>
+            <div class="col">
+                <button type="button" onclick="openGoogleSheet()" class="btn btn-success"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"></path></g></svg> Google Sheets </button>
+            </div>
+            <div class="col">
+                <a th:href="@{/delete/export/data}" type="button" class="btn btn-danger"><svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 93.191 93.191" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M64.511,11.505H43.842c0.137-0.453,0.23-0.921,0.23-1.403c0-1.298-0.515-2.542-1.433-3.459l-5.211-5.21 c-1.91-1.911-5.008-1.911-6.919,0l-3.884,3.883l-3.883-3.883c-1.91-1.91-5.008-1.911-6.919,0l-5.21,5.21 C9.695,7.56,9.179,8.804,9.179,10.102c0,1.298,0.516,2.542,1.433,3.459l3.884,3.885l-3.884,3.885 c-0.917,0.917-1.433,2.161-1.433,3.459c0,1.298,0.516,2.542,1.434,3.459l5.21,5.21c1.907,1.909,4.997,1.909,6.908,0.009v59.723 h59.586V35.733L61.15,21.116L64.511,11.505z M42.638,28.248c0.522-0.522,0.897-1.156,1.138-1.84h14.896v4.202H40.275 L42.638,28.248z M19.465,29.999l-5.211-5.21l7.343-7.344l-7.343-7.344l5.211-5.21l7.343,7.344l7.344-7.344l5.211,5.21 l-7.343,7.344l7.343,7.344l-5.211,5.21l-7.344-7.344L19.465,29.999z M72.126,80.149H30.743v-4.202h41.381v4.202H72.126z M72.126,62.413H30.743v-4.202h41.381v4.202H72.126z M72.126,42.107v4.202H30.743v-4.202H72.126z"></path> <polygon points="70.386,10.925 67.664,18.712 84.012,29.999 "></polygon> </g> </g> </g></svg>Delete Data</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openGoogleSheet() {
+        // This will open the auth endpoint in a new tab
+        window.open('/api/export/auth', '_blank');
+    }
+    </script>
+	
+
+    
+
+  <!-- Clients list -->
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Source</th>
+        <th scope="col">Date</th>
+        <th scope="col">Client_Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Company</th>
+        <th scope="col">Service_Interest</th>
+        <th scope="col">Amount (€)</th>
+        <th scope="col">VAT (€)</th>
+        <th scope="col">Total_Amount (€)</th>
+        <th scope="col">Invoice_Number</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Message</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="data, iterStat: ${exportedData}">
+        <th scope="row" th:text="${data.type}"></th>
+        <td th:text="${data.source}"></td>
+        <td th:text="${data.date}"></td>
+        <td th:text="${data.clientName}"></td>
+        <td th:text="${data.email}"></td>
+        <td th:text="${data.phone}"></td>
+        <td th:text="${data.company}"></td>
+        <td th:text="${data.serviceInterest}"></td>
+        <td th:text="${data.ammount}"></td>
+        <td th:text="${data.VAT}"></td>
+        <td th:text="${data.totalAmmount}"></td>
+        <td th:text="${data.invoiceNumber}"></td>
+        <td th:text="${data.priority}"></td>
+        <td th:text="${data.Message}"></td>
+        <td>
+            <a type="button" th:href="@{/data/delete(index=${iterStat.index})}" class="btn btn-danger"><svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>decline</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM6.1,21.9a18,18,0,0,1,29.1-12L9.9,35.2A18.1,18.1,0,0,1,6.1,21.9ZM26,41.9A18.2,18.2,0,0,1,12.7,38L38,12.8a17.6,17.6,0,0,1,3.9,13.3A18.1,18.1,0,0,1,26,41.9Z"></path> </g> </g> </g></svg></a>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+
+
+</body>
+</html>

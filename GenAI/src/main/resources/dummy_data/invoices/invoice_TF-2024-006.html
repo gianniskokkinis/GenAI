@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τιμολόγιο TF-2024-006</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .company { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .invoice-details { margin: 20px 0; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .invoice-table th, .invoice-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .invoice-table th { background-color: #f2f2f2; }
+        .total-row { font-weight: bold; background-color: #e8f4f8; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company">TechFlow Solutions</div>
+        <div>Λεωφ. Κηφισίας 123, 15125 Μαρούσι</div>
+        <div>ΑΦΜ: 123456789 | ΔΟΥ: Αμαρουσίου</div>
+        <div>Τηλ: 210-1234567 | Email: info@techflow-solutions.gr</div>
+    </div>
+
+    <div class="invoice-details">
+        <h2>ΤΙΜΟΛΟΓΙΟ ΠΑΡΟΧΗΣ ΥΠΗΡΕΣΙΩΝ</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <strong>Αριθμός:</strong> TF-2024-006<br>
+                <strong>Ημερομηνία:</strong> 26/01/2024<br>
+                <strong>Περίοδος:</strong> Ιανουάριος 2024
+            </div>
+            <div>
+                <strong>Πελάτης:</strong><br>
+                Ιατρείο Παπαδόπουλος<br>
+                Βασ. Κωνσταντίνου 78<br>
+                11635 Αθήνα<br>
+                ΑΦΜ: 654321987
+            </div>
+        </div>
+    </div>
+
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>Περιγραφή Υπηρεσίας</th>
+                <th>Ώρες</th>
+                <th>Τιμή/Ώρα</th>
+                <th>Σύνολο</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ανάπτυξη Συστήματος Διαχείρισης Ασθενών</td>
+                <td>40</td>
+                <td>€65.00</td>
+                <td>€2,600.00</td>
+            </tr>
+            <tr>
+                <td>Database Design & Setup</td>
+                <td>16</td>
+                <td>€70.00</td>
+                <td>€1,120.00</td>
+            </tr>
+            <tr>
+                <td>User Interface Development</td>
+                <td>24</td>
+                <td>€60.00</td>
+                <td>€1,440.00</td>
+            </tr>
+            <tr>
+                <td>Testing & Quality Assurance</td>
+                <td>12</td>
+                <td>€55.00</td>
+                <td>€660.00</td>
+            </tr>
+            <tr>
+                <td>User Training & Documentation</td>
+                <td>8</td>
+                <td>€50.00</td>
+                <td>€400.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <table style="width: 300px; margin-left: auto;">
+            <tr>
+                <td><strong>Καθαρή Αξία:</strong></td>
+                <td style="text-align: right;"><strong>€6,220.00</strong></td>
+            </tr>
+            <tr>
+                <td><strong>ΦΠΑ 24%:</strong></td>
+                <td style="text-align: right;"><strong>€1,492.80</strong></td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>ΣΥΝΟΛΟ:</strong></td>
+                <td style="text-align: right;"><strong>€7,712.80</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; font-size: 12px;">
+        <p><strong>Σημειώσεις:</strong> Συνολικές ώρες εργασίας: 100</p>
+        <p><strong>Υποστήριξη:</strong> 6 μήνες δωρεάν support</p>
+    </div>
+</body>
+</html> 

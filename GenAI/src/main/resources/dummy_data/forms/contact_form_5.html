@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμα Επικοινωνίας - TechFlow Solutions</title>
+</head>
+<body>
+    <h2>Αίτημα για Υπηρεσίες IT</h2>
+    <form action="/submit" method="POST">
+        <div>
+            <label>Όνομα και Επώνυμο:</label>
+            <input type="text" name="full_name" value="Κώστας Δημητρίου" readonly>
+        </div>
+        
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" value="kostas@buildingco.gr" readonly>
+        </div>
+        
+        <div>
+            <label>Τηλέφωνο:</label>
+            <input type="tel" name="phone" value="2310-123456" readonly>
+        </div>
+        
+        <div>
+            <label>Εταιρεία:</label>
+            <input type="text" name="company" value="Δημητρίου Κατασκευές ΑΕ" readonly>
+        </div>
+        
+        <div>
+            <label>Υπηρεσία Ενδιαφέροντος:</label>
+            <select name="service" disabled>
+                <option value="project_management" selected>Σύστημα Διαχείρισης Έργων</option>
+            </select>
+        </div>
+        
+        <div>
+            <label>Μήνυμα:</label>
+            <textarea name="message" readonly>Διαχειριζόμαστε 15+ ταυτόχρονα έργα κατασκευών. Χρειαζόμαστε σύστημα για παρακολούθηση προόδου, κόστους, υλικών και εργατικού δυναμικού.</textarea>
+        </div>
+        
+        <div>
+            <label>Ημερομηνία Υποβολής:</label>
+            <input type="datetime-local" name="submission_date" value="2024-01-19T13:10" readonly>
+        </div>
+        
+        <div>
+            <label>Προτεραιότητα:</label>
+            <select name="priority" disabled>
+                <option value="low" selected>Χαμηλή</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html> 

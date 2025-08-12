@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τιμολόγιο TF-2024-007</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .company { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .invoice-details { margin: 20px 0; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .invoice-table th, .invoice-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .invoice-table th { background-color: #f2f2f2; }
+        .total-row { font-weight: bold; background-color: #e8f4f8; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company">TechFlow Solutions</div>
+        <div>Λεωφ. Κηφισίας 123, 15125 Μαρούσι</div>
+        <div>ΑΦΜ: 123456789 | ΔΟΥ: Αμαρουσίου</div>
+        <div>Τηλ: 210-1234567 | Email: info@techflow-solutions.gr</div>
+    </div>
+
+    <div class="invoice-details">
+        <h2>ΤΙΜΟΛΟΓΙΟ ΠΩΛΗΣΗΣ</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <strong>Αριθμός:</strong> TF-2024-007<br>
+                <strong>Ημερομηνία:</strong> 27/01/2024<br>
+                <strong>Τρόπος Πληρωμής:</strong> Έμβασμα
+            </div>
+            <div>
+                <strong>Πελάτης:</strong><br>
+                Καφέ "Ελληνικός"<br>
+                Πλάκα 15<br>
+                10556 Αθήνα<br>
+                ΑΦΜ: 321654987
+            </div>
+        </div>
+    </div>
+
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>Περιγραφή</th>
+                <th>Ποσότητα</th>
+                <th>Τιμή Μονάδας</th>
+                <th>Σύνολο</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>WiFi Router Business Grade</td>
+                <td>1</td>
+                <td>€280.00</td>
+                <td>€280.00</td>
+            </tr>
+            <tr>
+                <td>Wireless Access Points</td>
+                <td>3</td>
+                <td>€120.00</td>
+                <td>€360.00</td>
+            </tr>
+            <tr>
+                <td>Network Security Appliance</td>
+                <td>1</td>
+                <td>€450.00</td>
+                <td>€450.00</td>
+            </tr>
+            <tr>
+                <td>Cabling & Installation</td>
+                <td>1</td>
+                <td>€380.00</td>
+                <td>€380.00</td>
+            </tr>
+            <tr>
+                <td>Configuration & Testing</td>
+                <td>1</td>
+                <td>€250.00</td>
+                <td>€250.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <table style="width: 300px; margin-left: auto;">
+            <tr>
+                <td><strong>Καθαρή Αξία:</strong></td>
+                <td style="text-align: right;"><strong>€1,720.00</strong></td>
+            </tr>
+            <tr>
+                <td><strong>ΦΠΑ 24%:</strong></td>
+                <td style="text-align: right;"><strong>€412.80</strong></td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>ΣΥΝΟΛΟ:</strong></td>
+                <td style="text-align: right;"><strong>€2,132.80</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; font-size: 12px;">
+        <p><strong>Σημειώσεις:</strong> Δωρεάν WiFi για τους πελάτες του καφέ</p>
+        <p><strong>Εγγύηση:</strong> 2 χρόνια εγγύηση συσκευών</p>
+    </div>
+</body>
+</html> 
